@@ -2,8 +2,7 @@
 
 import React, { Component} from 'react';
 import { AppRegistry,View,Text,StyleSheet,TouchableOpacity,AsyncStorage} from 'react-native';
-import LoginMhs from '../Mahasiswa/LoginMahasiswa';
-const LoginMhs = require('../Mahasiswa/LoginMahasiswa');
+
 
 export default class home extends Component{
     static navigationOptions =({navigation}) =>({
