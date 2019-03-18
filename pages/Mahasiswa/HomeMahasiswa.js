@@ -10,14 +10,29 @@ export default class home extends Component{
         title: 'Welcome',
     });
 
+    componentDidMount = () => {
+        AsyncStorage.getItem('asnobp').then((value) => this.setState({'asnobp':value }));
+        AsyncStorage.getItem('aspassword').then((value) => this.setState({'aspassword':value }));
+        AsyncStorage.getItem('asnama').then((value) => this.setState({'asnama':value}));
+    }
+
     logout = () =>{
         AsyncStorage.removeItem('asnobp');
         alert('logged out');
     }
 
+    constructor(props) {
+        super(props);
+        this.state = {
+            asnobp: "",
+            aspassword: "",
+            asnama: "",
+        }
+    }
+
     render(){
         const { navigate } = this.props.navigation;
-        const asnobp = this.props.navigation.getParam('asnobp');
+        // const asnobp = this.props.navigation.getParam('asnobp');
         return(
 
             <View style={styles.container}>
